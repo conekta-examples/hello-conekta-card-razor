@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using conekta;
 
 namespace HelloConektaCard.Controllers
 {
@@ -16,6 +17,12 @@ namespace HelloConektaCard.Controllers
 
 			ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
 			ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+
+			return View();
+		}
+
+		public ActionResult CreateCharge() {
+
 
 			return View();
 		}
