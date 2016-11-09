@@ -21,10 +21,10 @@ namespace HelloConektaCard.Controllers
 			return View();
 		}
 
-		public ActionResult CreateCharge() {
+		public ConektaObject CreateCharge() {
+			var charge = new ConektaObject();
 
-
-			return View();
+			return charge;
 		}
 	}
 }

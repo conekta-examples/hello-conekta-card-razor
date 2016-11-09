@@ -3,9 +3,8 @@
 
 # build
 [Oo]bj/
-[Bb]in/
-packages/
 TestResults/
+packages/
 
 # globs
 Makefile.in
