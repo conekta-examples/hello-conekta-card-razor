@@ -14,6 +14,12 @@ namespace HelloConektaCard
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 			);
+
+			routes.MapRoute(
+				name: "create",
+				url: "{controller}/{action}/{id}",
+				defaults: new { controller = "Home", action = "Create", id = UrlParameter.Optional }
+			);
 		}
 	}
 }

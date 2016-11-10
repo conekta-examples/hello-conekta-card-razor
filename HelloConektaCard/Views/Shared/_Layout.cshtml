@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/normalize.css")" />
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/skeleton.css")" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
-<body>
+<body class="container">
 	@RenderBody()
 </body>
 </html>

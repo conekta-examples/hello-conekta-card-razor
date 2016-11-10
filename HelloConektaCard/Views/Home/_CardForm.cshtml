@@ -1,31 +1,33 @@
 ﻿<form action="" method="POST" id="card-form">
-  <span class="card-errors"></span>
-  <div class="form-row">
-    <label>
-      <span>Nombre del tarjetahabiente</span>
-      <input type="text" size="20" data-conekta="card[name]"/>
-    </label>
-  </div>
-  <div class="form-row">
-    <label>
-      <span>Número de tarjeta de crédito</span>
-      <input type="text" size="20" data-conekta="card[number]"/>
-    </label>
-  </div>
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <input type="text" size="4" data-conekta="card[cvc]"/>
-    </label>
-  </div>
-  <div class="form-row">
-    <label>
-      <span>Fecha de expiración (MM/AAAA)</span>
-      <input type="text" size="2" data-conekta="card[exp_month]"/>
-    </label>
-    <span>/</span>
-    <input type="text" size="4" data-conekta="card[exp_year]"/>
-  </div>
+  	<span class="card-errors"></span>
+  	<div class="row">
+		<div class="form-row">
+		    <label>
+		      <span>Nombre del tarjetahabiente</span>
+		      <input type="text" size="20" data-conekta="card[name]" required="required"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>Número de tarjeta de crédito</span>
+		      <input type="number" size="20" data-conekta="card[number]" required="required"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>CVC</span>
+		      <input type="password" size="4" data-conekta="card[cvc]" required="required"/>
+		    </label>
+		  </div>
+		  <div class="form-row">
+		    <label>
+		      <span>Fecha de expiración (MM/AAAA)</span>
+		      <input type="number" size="2" data-conekta="card[exp_month]" required="required"/>
+		    </label>
+		    <span>/</span>
+		    <input type="number" size="4" data-conekta="card[exp_year]" required="required"/>
+		  </div>
+	</div>
 <!-- Información recomendada para sistema antifraude -->
   <div class="form-row">
     <label>
@@ -63,10 +65,9 @@
       <input type="text" size="25" data-conekta="card[address][country]"/>
     </label>
   </div>
-  <button type="submit">¡Pagar ahora!</button>
+  <button type="submit" name="submitToken" id="submitToken">¡Pagar ahora!</button>
 </form>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
 <script type="text/javascript">
 	//Set your Conekta public key.
@@ -84,7 +85,7 @@
 	//If the token is success, create an input with the value.
 	var conektaSuccessResponseHandler = function(token) {
 	  var $form = $("#card-form");
-	  $form.append($("<input type='hidden' name='conektaTokenId'>").val(token.id));
+	  $form.append($("<input type='hidden' name='conektaTokenId'id='conektaTokenId'>").val(token.id));
 	  $form.get(0).submit();
 	};
 	//If the token have an error, display it to the customer.

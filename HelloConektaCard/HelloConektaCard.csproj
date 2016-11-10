@@ -80,6 +80,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\Charge.cs" />
+    <Compile Include="Models\Shipping.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -91,6 +93,9 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\_CardForm.cshtml" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\skeleton.css" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
